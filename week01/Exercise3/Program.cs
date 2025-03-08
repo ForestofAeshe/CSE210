@@ -38,11 +38,11 @@ class Program
                     guessCount++;
                     break;
                 }
-
             }
             Console.WriteLine($"It took you {guessCount} guesses.");
 
             timesPlayed++;
+            
             Console.WriteLine($"You have played {timesPlayed} times.");
 
             Console.WriteLine("Would you like to play again? yes/no: ");
@@ -51,9 +51,5 @@ class Program
 
     Console.WriteLine("Thank you for playing!");
     Console.WriteLine($"You played {timesPlayed} times.");
-
-
     }
-    
-    
 }
