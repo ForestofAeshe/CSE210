@@ -3,6 +3,7 @@
 // Display(): void ||| display entry
 
 using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace JournalSystem
 {
@@ -12,7 +13,7 @@ namespace JournalSystem
         PromptGenerator _generator;
         DateTime _timeDateNow;
         List<JournalEntry> _entries;
-        struct JournalEntry()
+        public struct JournalEntry()
         {
             // _date: string ||| get date time now. simple time. full date yyyy/mm/dd
             public string _date;
@@ -21,8 +22,9 @@ namespace JournalSystem
             // _entryText: string ||| user inputs response.
             public string _input;
         }
-                public Journal()
+            public Journal()
         {
+            _entries = new List<JournalEntry>();
             _generator = new PromptGenerator();
             _timeDateNow = new DateTime();
         }
