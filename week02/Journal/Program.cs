@@ -3,11 +3,22 @@ using JournalSystem;
 
 class Program
 {
+    //Function Declarations
+    void SaveJournalToDisk(Journal Journal)
+    {
+
+    }
+    void LoadJournalFromDisk(Journal Journal)
+    {
+
+    }
+
     static void Main(string[] args)
     {
         PromptGenerator promptGenerator = new PromptGenerator();
         Journal MyJournal = new Journal();
         Console.WriteLine("Hello World! This is the Journals Project.");
+
         string menuInput = "";
 
         do
@@ -33,36 +44,22 @@ class Program
             //display all
             else if (menuInput == "displayEntries")
             {
-                // for (int i = 0;i < Journal._entries.Count(); i++)
-                // {
-                //     Console.WriteLine(Journal._entries[i]);
-                //     Console.WriteLine();
-                // }
+                MyJournal.DisplayEntries();
 
-                // OR
-
-                // foreach (string i in _entries)
-                // {
-                //     Console.WriteLine(Journal._entries[i]);
-                //     Console.WriteLine();  
-                // }
-
-                Console.WriteLine("show things");
-                Console.WriteLine();
             }
 
             //save to file
             else if (menuInput == "saveToFile")
             {
-                Console.WriteLine("save things");
-                Console.WriteLine();
+                MyJournal.SaveFile();
+
             }
 
             //load from file
             else if (menuInput == "loadFromFile")
             {
-                Console.WriteLine("load things");
-                Console.WriteLine();
+                MyJournal.LoadFile();
+                
             }
 
             //quit
