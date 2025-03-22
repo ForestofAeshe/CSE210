@@ -19,6 +19,8 @@ class Program
         Console.WriteLine("--------");
 
         Fraction.Fraction Fraction2 = new Fraction.Fraction();
+        Console.WriteLine($"Fraction: {Fraction2.GetFractionString()}");
+        Console.WriteLine($"Decimal: {Fraction2.GetDecimal()}");
 
         Console.WriteLine("--------");
 
