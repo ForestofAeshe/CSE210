@@ -25,14 +25,14 @@ namespace ScriptureMemorizer
         }
 
         // get hidden state
-        public bool IsHidden()
-        {
+        // public bool IsHidden()
+        // {
             
-        }
-        public string GetDisplayText() 
-        {
+        // }
+        // public string GetDisplayText() 
+        // {
         
-        }
+        // }
         public void SetWord(string text)
         {
             this._text = text;
