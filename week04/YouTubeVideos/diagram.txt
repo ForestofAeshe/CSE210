@@ -1,0 +1,26 @@
+
+
+class video
+
+    constructs
+        title: string
+        author: string
+        length: int
+        comments: List<Comment>
+
+    functions
+        createVideo(title,author,length,comments): void
+        CommentsCount: int
+        
+
+class Comment
+
+    constructs
+        authorOfComment: string
+        comment: string
+
+    functions
+        commentsToList: void
+
+
+

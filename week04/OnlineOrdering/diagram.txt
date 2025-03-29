@@ -1,0 +1,54 @@
+
+
+class Product
+
+    constructs
+        productItem: string
+        price: float
+        productID: int
+        cartQuantity: int
+
+    functions
+        getTotalCost(price, cartQuantity): float
+        makeList(productItem, productID, price, cartQuantity): void
+
+class customer
+
+    constructs
+        fname: string
+        lname: string
+        fullname: string
+        fullAddress: list<Address>
+    
+    functions
+        fullAddress(street,city,state,country): void
+        checkCountry(Address.checkCountry): bool
+        makeFullName(fname, lname): string
+
+class Address
+
+    constructs
+        street: string
+        city: string
+        state/province: string
+        country: string
+
+    functions
+        checkCountry(country): bool
+        prettyAddress(street,city,state,country): string
+
+class Order
+
+    constructs
+        shoppingCart: list<Product>
+        totalPrice: float
+        shippingCost: int
+        packingList: list<Product>
+        shippingLabel: list<string>
+
+    functions
+        readCart(shoppingCart): void
+        totalPrice(shoppingCart): float
+        shippingCost(checkCountry): int
+        printPackingList(shoppingCart): void
+        printShippingLabel(prettyAddress, fullname): void
