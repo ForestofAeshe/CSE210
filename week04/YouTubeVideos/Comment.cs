@@ -1,42 +1,26 @@
 using System;
-using System.Security.Cryptography.X509Certificates;
+
 
 namespace YTVid
 {
     class Comment
     {
-        private string[] _commentAuthor;
-        private string[] _comments;
-        private int _commentCount;
+        private string _commentAuthor;
+        private string _commentContent;
+        
 
-        public Comment(List<string> commentList, string[] comments)
+        public Comment(string commentList)
         {
-
-            GetCommentList(commentList);
-            GetCommentCount(comments);
-
+            string[] strings= commentList.Split(':');
+            _commentAuthor = strings[0];
+            _commentContent = strings[1];
         }
 
-
-        public void GetCommentList(List<string> commentText)
+        public void PrintComment()
         {
-            for (int i = 0; i<commentText.Count(); i++)
-            {
-                string[] _temp = commentText[i].Split(':');
-
-                _commentAuthor.Append(_temp[0]);
-                _comments.Append(_temp[1]);
-
-            }
+            Console.WriteLine($"Author: {_commentAuthor}");
+            Console.WriteLine($"> {_commentContent}");
+            Console.WriteLine();
         }
-
-        public int GetCommentCount(string[] _comments)
-        {
-            return _comments.Count();
-        }
-
-
-
-
     }
 }

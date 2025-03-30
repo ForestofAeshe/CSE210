@@ -2,37 +2,42 @@ using System;
 
 namespace YTVid
 {
-    class YouTubeVideos
+    class YouTubeVideo
     {
-        private string[] _videoData;
+  
         private string _title;
         private string _author;
         private int _length;
-
-
-        public YouTubeVideos(string videoString, List<string> commentText)
+        private List<Comment> _comments;
+        public YouTubeVideo(string[] videoString)
         {
-            GetVideo(videoString);
-
+            _title = videoString[0];
+            _author = videoString[1];
+            _length = int.Parse(videoString[2]);
+            _comments = new List<Comment>();
         }
 
-        public void GetVideo(string text)
+        public void PrintVideo()
         {
-            this._videoData = text.Split(':');
-            for (int i = 0; i < _videoData.Count();i++)
+            Console.WriteLine($"Title: {_title} | Author: {_author} | Length: {_length} \n");
+        }
+        public int GetCommentCount()
+        {
+            return _comments.Count();
+        }
+        public void AddComment(string[] commentList)
+        {
+            for (int i = 0; i < commentList.Count(); i++)
             {
-                _title = _videoData[i];
-                _author = _videoData[i+1];
-                _length = int.Parse(_videoData[i+2]);
-                i = i+3;
+                _comments.Add(new Comment(commentList[i]));
             }
         }
-
-        public void PrintVideo(string title, string author, int length)
+        public void PrintCommentsList()
         {
-            Console.WriteLine($"Title: {title} | Author: {author} | Length: {length}");
+            foreach (Comment comment in _comments)
+            {
+                comment.PrintComment();
+            }
         }
-
-
     }
 }

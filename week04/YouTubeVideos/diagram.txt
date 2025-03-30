@@ -10,7 +10,7 @@ class video
 
     functions
         createVideo(title,author,length,comments): void
-        CommentsCount: int
+
         
 
 class Comment
@@ -20,7 +20,8 @@ class Comment
         comment: string
 
     functions
-        commentsToList: void
+        makeComment: void
+        CommentsCount: int
 
 
 
