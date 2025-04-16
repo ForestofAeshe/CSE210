@@ -1,9 +1,11 @@
 using System;
-
+using Goal;
+using GoalManager;
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the EternalQuest Project.");
+        GoalManager.GoalManager GM = new GoalManager.GoalManager();
+        GM.Start();
     }
 }
