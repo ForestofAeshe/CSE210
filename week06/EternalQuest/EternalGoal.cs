@@ -1,24 +1,14 @@
 using System;
+using System.Numerics;
 namespace Goal
 {
     public class EternalGoal : Goal
     {
-        public EternalGoal(string name, string description, string points) : base(name, description, points)
+        public EternalGoal(string name, string description, int points) : base(name, description, points)
         {
             
         }
-        public override void RecordEvent()
-        {
-        
-        }
-        public override bool IsComplete()
-        {
-            return false;
-        }
-        public override string GetDetailsString()
-        {
-            return "eternal test";
-        }
+
         public override string GetStringRepresentation()
         {
             string _event = string.Empty;
@@ -29,16 +19,9 @@ namespace Goal
         {
             return "eternal";
         }
-                public string GetName()
+        protected override int CompleteGoal()
         {
-            return _shortName;
-        }
-        public string GetDescription()
-        {
-            return _description;
-        }
-        public string GetPoints()
-        {
+            _isComplete = false;
             return _points;
         }
     }

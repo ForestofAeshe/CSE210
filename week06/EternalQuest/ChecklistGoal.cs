@@ -6,27 +6,24 @@ namespace Goal
         public int _amountCompleted = new int();
         public int _target;
         public int _bonus;
-        public ChecklistGoal(string name, string description, string points, int target, int bonus) : base(name, description, points) //issues setting up constructor
+        public ChecklistGoal(string name, string description, int points, int target, int bonus) : base(name, description, points) //issues setting up constructor
         {
             _target = target;
             _bonus = bonus;
 
         }
-        public override void RecordEvent()
+        public override int RecordEvent()
         {
-            
-        }
-        public override bool IsComplete()
-        {
+            _amountCompleted++;
             if (_amountCompleted % _target == 0)
             {
-                return IsComplete();
+                return CompleteGoal() + _bonus;
             }
-            else return false;
+            return _points;
         }
-        public override string GetDetailsString()
+        public override string GetFullDetails()
         {
-            return "checklist test";
+            return $"{TextComplete()} {_shortName}: {_description} (Target complete {_amountCompleted}/{_target})";
         }
         public override string GetStringRepresentation()
         {
@@ -36,19 +33,7 @@ namespace Goal
         }
         public override string ReturnType()
         {
-            return "simple";
-        }
-                public string GetName()
-        {
-            return _shortName;
-        }
-        public string GetDescription()
-        {
-            return _description;
-        }
-        public string GetPoints()
-        {
-            return _points;
+            return "checklist";
         }
         public int GetTarget()
         {
@@ -58,6 +43,5 @@ namespace Goal
         {
             return _bonus;
         }
-
     }
 }
