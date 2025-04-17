@@ -1,6 +1,6 @@
 using System;
 
-namespace Activity
+namespace Exercise
 {
     public class BreathingActivity : Activity
     {

@@ -1,5 +1,5 @@
 using System;
-using Activity;
+using Exercise;
 using Microsoft.VisualBasic;
 
 class Program
@@ -14,7 +14,7 @@ class Program
         string menuOption = "";
         do
         {
-            Activity.Activity menuList = new Activity.Activity("place","holder",0);
+            Exercise.Activity menuList = new Exercise.Activity("place","holder",0);
             menuList.DisplayStartingMessage();
             Console.WriteLine($"1. Breathing Activity\n2. Listing Activity\n3. Reflecting Activity\n");
             Console.WriteLine("Please select an option by typing a number OR type 'quit' to exit.");

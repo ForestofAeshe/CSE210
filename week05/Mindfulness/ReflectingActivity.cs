@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel;
 
-namespace Activity
+namespace Exercise
 {
     public class ReflectingActivity : Activity
     {
