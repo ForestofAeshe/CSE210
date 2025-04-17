@@ -7,31 +7,41 @@ namespace Exercise
 		protected DateTime _date;
 		protected int _minutes;
 		protected double _distance;
-		public Exercise()
+		public Exercise(int minutes, double distance)
 		{
 			_date = DateTime.Now;
-			_minutes = SetMinutes();
-			_distance = SetDistance();
+            SetMinutes(minutes);
+            SetDistance(distance);
+
+
+
 		}
 		protected double GetSpeed()
 		{
 			//mph calulation
 			double speed;
 			float timeInHours;
-			timeInHours = _minutes / 60;
+			timeInHours = (float)_minutes / 60;
 			speed = _distance / timeInHours;
 			return speed;
 		}
 		protected double GetPace()
 		{
-			return _minutes / _distance;
+			return (double)_minutes / _distance;
 		}
-		protected abstract double SetDistance();
-        protected abstract int SetMinutes();
-        protected double GetDistance()
+		protected virtual void SetDistance(double distance)
+        {
+            _distance = distance;
+        }
+        protected virtual void SetMinutes(int minutes)
+        {
+            _minutes = minutes;
+        }
+        protected virtual double GetDistance()
         {
             return _distance;
         }
+
         protected float GetMinutes()
         {
             return _minutes;
